@@ -7,18 +7,25 @@
 
 ### Steps to Run:
 1. Clone the repository:
+   
    git clone https://github.com/NagaMalleswariKolluri/receipt_processor.git
+
    cd receipt-processor
+
 **Build and run the Docker container:**
+
 docker build -t receipt-processor .
+
 docker run -p 8080:8080 --name receipt_processor_api receipt-processor
 
 **API will be available at:**
 **Postman**: 
 **API 1**
+
 http://localhost:8080/receipts/process
 Select POST,provide example receipt in Body section by selecting raw and JSON
-Example receipt
+
+**Example receipt**
    {
   "retailer": "Target",
   "purchaseDate": "2022-01-01",
@@ -44,17 +51,19 @@ Example receipt
   "total": "35.35"
 }
 
-Click on Send
+Click on **Send**
 It will provide an id as a response in the sample format below 
-{
+**{
     "id": "4bffd7f9-a27f-4aed-9c40-bee92b3091dc"
-}
+}**
 
 Now copy the ID value
 
 **API 2**
 http://localhost:8080/receipts/4bffd7f9-a27f-4aed-9c40-bee92b3091dc/points
+
 and change the request type to GET and click on Send
+
 It will display the output of points based on ID
 
 Browser: http://localhost:8080/  #Just a Default page
